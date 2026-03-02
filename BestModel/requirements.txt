@@ -1,0 +1,35 @@
+# Core dependencies for DeBERTa-v3-base PCL Classification Model
+
+# Deep Learning Framework
+torch>=2.0.0
+
+# Transformers library for DeBERTa model
+transformers>=4.30.0
+
+# SentencePiece for DeBERTa tokenizer
+sentencepiece>=0.1.99
+protobuf>=3.20.0
+
+# Dataset handling
+datasets>=2.12.0
+
+# Machine Learning utilities
+scikit-learn>=1.2.0
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Progress bars
+tqdm>=4.65.0
+
+# Training acceleration
+accelerate>=0.20.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# NLTK for text processing
+nltk>=3.8.0
+
+# Additional utilities
+scipy>=1.10.0
