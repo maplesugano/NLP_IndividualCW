@@ -8,13 +8,10 @@ Best model weights are hosted on Hugging Face Hub:
 https://huggingface.co/maplesugano/NLP_IndividualCW_best_model
 
 ## Repository Structure
-- [baseline.ipynb](baseline.ipynb): Baseline training and evaluation.
-- [eda.ipynb](eda.ipynb): Exploratory data analysis.
-- [local_evaluation.ipynb](local_evaluation.ipynb): Local evaluation workflow.
 - [dont_patronize_me.py](dont_patronize_me.py): Data loading and utilities.
 - [BestModel/](BestModel/): Best model notebook and data splits.
-- [BestModel/dev.txt](BestModel/dev.txt): Development split used by the best model.
-- [BestModel/test.txt](BestModel/test.txt): Test split used by the best model.
+- [dev.txt](dev.txt): Development split used by the best model.
+- [test.txt](test.txt): Test split used by the best model.
 - [data/](data/): Task data files.
 
 ## Setup
