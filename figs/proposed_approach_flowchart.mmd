@@ -1,0 +1,28 @@
+flowchart TD
+    A["Load data files"] --> B["Label binarisation: y = 1 if label >= 2 else 0"]
+    B --> C["Split train/dev by paragraph IDs"]
+    C --> D["Build training base set"]
+    D --> E["Augment positives via WordNet synonym replacement"]
+    E --> F["Optional downsample negatives to target ratio"]
+    F --> G["Compute class weights for loss"]
+    G --> H["Tokenise with RoBERTa tokeniser (max_length=256)"]
+    H --> I["Configure RoBERTa with dropout tuning"]
+    I --> J["Train with WeightedTrainer"]
+    J --> K["ThresholdCallback: sweep thresholds each epoch"]
+    K --> L["Select best threshold by dev F1"]
+    L --> M["Evaluate on dev set and report F1"]
+
+    classDef data fill:#f7c59f,stroke:#b36200,stroke-width:2px,color:#2b1b00;
+    classDef prep fill:#b8e0d2,stroke:#1b6f5a,stroke-width:2px,color:#0d2f26;
+    classDef train fill:#cdb4db,stroke:#6b2a89,stroke-width:2px,color:#2a0f3a;
+    classDef eval fill:#a2d2ff,stroke:#0b5aa2,stroke-width:2px,color:#0b2340;
+    classDef tune fill:#ffd6a5,stroke:#a85a00,stroke-width:2px,color:#3a1f00;
+
+    class A,B,C data;
+    class D,E,F,G prep;
+    class H,I,J train;
+    class K,L tune;
+    class M eval;
+
+    linkStyle 0,1,2,3,4,5 stroke:#555,stroke-width:2px;
+    linkStyle 6,7,8,9,10,11 stroke:#333,stroke-width:2px,stroke-dasharray:3 3;
